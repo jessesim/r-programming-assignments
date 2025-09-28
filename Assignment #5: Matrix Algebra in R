@@ -43,5 +43,7 @@ OUTPUT:
 <simpleError in determinant.matrix(x, logarithm = TRUE, ...): 'x' must be a square matrix>
 
 > invA <- solve(A)
+
+Blog: https://jesserjournal.blogspot.com/2025/09/assignment-5-matrix-algebra-in-r.html
 Error in solve.default(A) : 
   Lapack routine dgesv: system is exactly singular: U[6,6] = 0
