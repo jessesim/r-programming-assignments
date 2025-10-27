@@ -1,0 +1,35 @@
+library(lattice)
+library(ggplot2)
+
+data("mtcars", package = "datasets")
+head(mtcars)
+
+plot(mtcars$wt, mtcars$mpg,
+     main   = "Base: mpg vs. wt",
+     xlab   = "wt",
+     ylab   = "mpg")
+
+hist(mtcars$hp,
+     main   = "Base: Distribution of hp",
+     xlab   = "hp")
+
+xyplot(mpg ~ wt | factor(cyl),
+       data = mtcars,
+       main = "Lattice: mpg vs. wt by cyl")
+
+bwplot(hp ~ factor(cyl),
+       data = mtcars,
+       main = "Lattice: hp by cyl")
+
+
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "ggplot2: mpg vs. wt with trend by cyl")
+
+ggplot(mtcars, aes(hp)) +
+  geom_histogram(binwidth = 20) +
+  facet_wrap(~ cyl) +
+  labs(title = "ggplot2: hp distribution by cyl")
+
+https://jesserjournal.blogspot.com/2025/10/assignment-9-visualization-in-r-base.html
