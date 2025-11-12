@@ -1,0 +1,40 @@
+---
+title: "My R Markdown Primer"
+author: "Jesse S"
+date: "2025-11-11"
+output: html_document
+---
+
+### Introduction
+
+R Markdown is a file format for making dynamic documents with R. R Markdown allows you to combine code, output, and narrative text in a single document.
+
+### Narrative Paragraph
+
+This document is an example of R Markdown's capabilities. In this document We will populate a LaTeX math expression, load a dataset, perform a simple analysis, and display a plot. The biggest benefit of R Markdown is that if the data changes, we can knit the document again to update all the results automatically.
+
+LaTeX math expression:
+$$
+\alpha + \beta = \gamma
+$$
+
+### Executables
+
+```{r}
+library(ggplot2)
+
+```
+
+```{r}
+data(iris)
+
+summary(iris)
+
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+  geom_point() +
+  labs(title = "Iris Sepal Length vs. Petal Length",
+       x = "Sepal Length (cm)",
+       y = "Petal Length (cm)")
+```
+
+R Markdown is significantly more efficient than creating a plain report. The ability to embed executable code directly within the narrative ensures that the figures and statistics are reproducible and always up-to-date. This integrated workflow prevents copy-paste errors and streamlines the process of creating data-driven reports.
