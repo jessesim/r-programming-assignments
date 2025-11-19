@@ -1,0 +1,46 @@
+---
+title: "Introduction to deskcleaner"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to deskcleaner}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This vignette shows how to use the deskcleanerV2 package.
+
+```{r setup}
+library(deskcleaner)
+
+messy_data <- data.frame(
+  id = c("A01", "A02", "A03", NA, "A06"),
+  name = c("Alice", "Bob", "Charlie", NA, "David"),
+  score = c(85, NA, 72, NA, 68),
+  status = c("active", "inactive", "active", NA, "inactive")
+)
+
+messy_data$empty_col <- NA
+
+messy_data
+```
+
+```{r}
+summarize_missing(messy_data)
+```
+
+```{r}
+data_no_rows <- remove_empty(messy_data, which = "rows")
+data_no_rows
+```
+
+```{r}
+cleaned_data <- remove_empty(data_no_rows, which = "cols")
+cleaned_data
+```

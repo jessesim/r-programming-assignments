@@ -1,0 +1,20 @@
+Package: deskcleaner
+Title: A Toolkit for Data Cleaning Tasks
+Version: 0.0.0.9000
+Authors@R:
+    person("Jesse", "Simmons", email = "jesses@usf.edu", role = c("aut", "cre"))
+Description: Provides a set of simple, pipeable functions to handle common 
+    data cleaning and inspection tasks. The goal is to speed up the initial
+    data exploration phase by automating repetitive chores like removing 
+    empty rows or columns and summarizing missing values.
+Depends: 
+    R (>= 3.5)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
